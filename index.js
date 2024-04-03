@@ -42,7 +42,7 @@ server.listen(8080, () => {
 });
 
 // MongoDB connection
-const MONGO_URL = "mongodb://localhost:27017";
+const MONGO_URL = "mongodb://localhost:27017/DuckPond";
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGO_URL);
