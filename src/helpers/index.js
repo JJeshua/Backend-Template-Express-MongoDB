@@ -1,6 +1,6 @@
 import crypto from "crypto";
 
-const SECRET = "TEST-SECRET-API-REST";
+const SECRET = "CHANGE_ME_PLEASE_PUT_IN_ENV_FILE"; 
 
 /**
  * generate random string function. This function will generate a random string. Uses the crypto library.
