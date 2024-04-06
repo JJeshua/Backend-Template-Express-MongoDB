@@ -1,6 +1,6 @@
-import express from "express";
+import express from 'express';
 
-import authentication from "./authentication.js";
+import authentication from './authentication.js';
 
 const router = express.Router();
 

@@ -1,22 +1,22 @@
-import express from "express";
+import express from 'express';
 
-import { createUser } from "../db/users.js";
-import { generateRandomString, authentication } from "../helpers/index.js";
-import { getUserByEmail } from "../db/users.js";
+import { createUser } from '../db/users.js';
+import { generateRandomString, authentication } from '../helpers/index.js';
+import { getUserByEmail } from '../db/users.js';
 
-import pkg from "lodash";
+import pkg from 'lodash';
 const { get, merge } = pkg;
 
 export const register = async (req, res) => {
   const registrationRequestBodyValid = get(
     req,
-    "registrationRequestBodyValid",
+    'registrationRequestBodyValid',
     false
   );
 
   if (!registrationRequestBodyValid) {
     return res.status(400).json({
-      error: "Invalid request...",
+      error: 'Invalid request...',
     });
   }
 
@@ -28,7 +28,7 @@ export const register = async (req, res) => {
 
     if (userExists) {
       return res.status(400).json({
-        error: "User already exists...",
+        error: 'User already exists...',
       });
     }
 
@@ -50,9 +50,9 @@ export const register = async (req, res) => {
 
     return res.sendStatus(200);
   } catch (error) {
-    console.error("Error registering user: ", error);
+    console.error('Error registering user: ', error);
     return res.status(400).json({
-      error: "Invalid request...",
+      error: 'Invalid request...',
     });
   }
 };
@@ -62,7 +62,7 @@ export const login = async (req, res) => {
 
   if (!email || !password) {
     return res.status(400).json({
-      error: "Invalid email or password...",
+      error: 'Invalid email or password...',
     });
   }
 
@@ -70,7 +70,7 @@ export const login = async (req, res) => {
 
   if (!user) {
     return res.status(400).json({
-      error: "Invalid email or password...",
+      error: 'Invalid email or password...',
     });
   }
 
@@ -78,7 +78,7 @@ export const login = async (req, res) => {
 
   if (authentication(salt, password) !== hashedPassword) {
     return res.status(400).json({
-      error: "Invalid email or password...",
+      error: 'Invalid email or password...',
     });
   }
 
@@ -89,12 +89,12 @@ export const login = async (req, res) => {
 
   await user.save();
 
-  res.cookie("session_token", user.authentication.session_token, {
-    domain: "localhost",
-    path: "/",
+  res.cookie('session_token', user.authentication.session_token, {
+    domain: 'localhost',
+    path: '/',
     secure: true,
     httpOnly: true,
-    sameSite: "none",
+    sameSite: 'none',
   });
 
   return res.sendStatus(200);

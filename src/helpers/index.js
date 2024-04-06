@@ -1,6 +1,6 @@
-import crypto from "crypto";
+import crypto from 'crypto';
 
-const SECRET = "CHANGE_ME_PLEASE_PUT_IN_ENV_FILE"; 
+const SECRET = 'CHANGE_ME_PLEASE_PUT_IN_ENV_FILE';
 
 /**
  * generate random string function. This function will generate a random string. Uses the crypto library.
@@ -8,7 +8,7 @@ const SECRET = "CHANGE_ME_PLEASE_PUT_IN_ENV_FILE";
  * @returns a random string
  */
 export const generateRandomString = () => {
-  return crypto.randomBytes(128).toString("base64");
+  return crypto.randomBytes(128).toString('base64');
 };
 
 /**
@@ -21,7 +21,7 @@ export const generateRandomString = () => {
  */
 export const authentication = (salt, password) => {
   return crypto
-    .createHmac("sha256", [salt, password].join("/"))
+    .createHmac('sha256', [salt, password].join('/'))
     .update(SECRET)
-    .digest("hex");
+    .digest('hex');
 };

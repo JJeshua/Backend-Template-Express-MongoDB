@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-export const UserModel = mongoose.model("User", userSchema);
+export const UserModel = mongoose.model('User', userSchema);
 
 export const createUser = async (values) => {
   return UserModel(values)
@@ -29,7 +29,9 @@ export const createUser = async (values) => {
 
 export const getUserByEmail = async (email, includeCredentials) => {
   if (includeCredentials) {
-    return UserModel.findOne({ email }).select("authentication.password authentication.salt");
+    return UserModel.findOne({ email }).select(
+      'authentication.password authentication.salt'
+    );
   }
 
   return UserModel.findOne({ email });
@@ -37,6 +39,6 @@ export const getUserByEmail = async (email, includeCredentials) => {
 
 export const updateUserSessionToken = async (id, session_token) => {
   return UserModel.findByIdAndUpdate(id, {
-    "authentication.session_token": session_token,
+    'authentication.session_token': session_token,
   });
 };
