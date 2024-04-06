@@ -1,7 +1,9 @@
 import express from "express";
 
-import { register } from "../controllers/authentication.js";
+import { register, login } from "../controllers/authentication.js";
+import { isValidRegistrationRequestBody } from "../middlewares/authentication.js";
 
 export default (router) => {
-  router.post("/auth/register", register);
+  router.post("/auth/register", isValidRegistrationRequestBody, register);
+  router.post("/auth/login", login)
 };
