@@ -2,10 +2,10 @@
 ## Overview
 Backend-Template-Express-MongoDB is a starter template designed to help developers quickly set up a backend server using Express.js and MongoDB. The template follows a layered architecture design with 5 main layers in mind: client, authorization, api endpoint, data access, and database. It includes basic authentication routes for registering and logging in users. The authentication is made from scratch, and is quite simple but helpful for learning purposes.
 ## Features
-**Layered Architecture Design**: Promotes separation of concerns and easier maintenance.
-**Express.js**: The standard.
-**MongoDB**: NoSQL database.
-**DevContainer Support**: Includes a .devcontainer folder for easy setup in Visual Studio Code
+**Layered Architecture Design**: Promotes separation of concerns and easier maintenance.\
+**Express.js**: The standard.\
+**MongoDB**: NoSQL database.\
+**DevContainer Support**: Includes a .devcontainer folder for easy setup in Visual Studio Code\
 ## Getting Started
 ### Perequisites
 * Docker
