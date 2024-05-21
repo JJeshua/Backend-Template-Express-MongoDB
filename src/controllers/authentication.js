@@ -8,18 +8,6 @@ import pkg from 'lodash';
 const { get, merge } = pkg;
 
 export const register = async (req, res) => {
-  const registrationRequestBodyValid = get(
-    req,
-    'registrationRequestBodyValid',
-    false
-  );
-
-  if (!registrationRequestBodyValid) {
-    return res.status(400).json({
-      error: 'Invalid request...',
-    });
-  }
-
   try {
     const { first_name, last_name, username, email, password, date_of_birth } =
       req.body;
