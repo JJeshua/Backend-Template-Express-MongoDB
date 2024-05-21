@@ -52,8 +52,5 @@ export const isValidRegistrationRequestBody = (req, res, next) => {
     }
   }
 
-  const registrationRequestBodyValid = true;
-  merge(req, { registrationRequestBodyValid });
-
   next();
 };
