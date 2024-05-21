@@ -5,7 +5,7 @@ Backend-Template-Express-MongoDB is a starter template designed to help develope
 **Layered Architecture Design**: Promotes separation of concerns and easier maintenance.\
 **Express.js**: The standard.\
 **MongoDB**: NoSQL database.\
-**DevContainer Support**: Includes a .devcontainer folder for easy setup in Visual Studio Code\
+**DevContainer Support**: Includes a .devcontainer folder for easy setup in Visual Studio Code
 ## Getting Started
 ### Perequisites
 * Docker
