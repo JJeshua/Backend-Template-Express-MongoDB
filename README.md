@@ -29,5 +29,5 @@ This will set up the development environment inside a Docker container, configur
 
 # References
 
+[How to create a REST API with Node.js and Express](https://blog.postman.com/how-to-create-a-rest-api-with-node-js-and-express/)
 [The Complete Guide To Building A REST API With Node, Express, TypeScript & MongoDB + Authentication](https://www.youtube.com/watch?v=b8ZUb_Okxro "The Complete Guide To Building A REST API With Node, Express, TypeScript & MongoDB + Authentication")
-
